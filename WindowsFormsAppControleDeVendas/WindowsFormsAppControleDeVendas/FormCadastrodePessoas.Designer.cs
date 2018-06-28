@@ -106,12 +106,18 @@
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.comboBoxPessoas = new System.Windows.Forms.ComboBox();
+            this.radioButtonNomeRazaoSocialApelido = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.buttonFoto = new System.Windows.Forms.Button();
+            this.buttonNovo = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBoxIdentificacao.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBoxBotoes.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -142,7 +148,7 @@
             this.groupBox2.Location = new System.Drawing.Point(18, 311);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(852, 177);
-            this.groupBox2.TabIndex = 14;
+            this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Endereço ";
             this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
@@ -153,7 +159,7 @@
             this.textBoxPais.MaxLength = 50;
             this.textBoxPais.Name = "textBoxPais";
             this.textBoxPais.Size = new System.Drawing.Size(177, 20);
-            this.textBoxPais.TabIndex = 17;
+            this.textBoxPais.TabIndex = 25;
             this.textBoxPais.Text = "Brasil";
             // 
             // textBoxComplemento
@@ -162,7 +168,7 @@
             this.textBoxComplemento.MaxLength = 20;
             this.textBoxComplemento.Name = "textBoxComplemento";
             this.textBoxComplemento.Size = new System.Drawing.Size(177, 20);
-            this.textBoxComplemento.TabIndex = 16;
+            this.textBoxComplemento.TabIndex = 28;
             // 
             // comboBoxUF
             // 
@@ -179,7 +185,7 @@
             this.comboBoxUF.MaxLength = 2;
             this.comboBoxUF.Name = "comboBoxUF";
             this.comboBoxUF.Size = new System.Drawing.Size(53, 21);
-            this.comboBoxUF.TabIndex = 12;
+            this.comboBoxUF.TabIndex = 31;
             // 
             // label14
             // 
@@ -196,7 +202,7 @@
             this.textBoxLocalidade.MaxLength = 255;
             this.textBoxLocalidade.Name = "textBoxLocalidade";
             this.textBoxLocalidade.Size = new System.Drawing.Size(739, 20);
-            this.textBoxLocalidade.TabIndex = 10;
+            this.textBoxLocalidade.TabIndex = 30;
             // 
             // label13
             // 
@@ -213,7 +219,7 @@
             this.textBoxBairro.MaxLength = 255;
             this.textBoxBairro.Name = "textBoxBairro";
             this.textBoxBairro.Size = new System.Drawing.Size(739, 20);
-            this.textBoxBairro.TabIndex = 8;
+            this.textBoxBairro.TabIndex = 29;
             // 
             // label12
             // 
@@ -239,7 +245,7 @@
             this.maskedTextBoxNumeroLote.Mask = "0000000";
             this.maskedTextBoxNumeroLote.Name = "maskedTextBoxNumeroLote";
             this.maskedTextBoxNumeroLote.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxNumeroLote.TabIndex = 5;
+            this.maskedTextBoxNumeroLote.TabIndex = 27;
             this.maskedTextBoxNumeroLote.ValidatingType = typeof(int);
             // 
             // label10
@@ -257,7 +263,7 @@
             this.textBoxNome_Logradouro.MaxLength = 255;
             this.textBoxNome_Logradouro.Name = "textBoxNome_Logradouro";
             this.textBoxNome_Logradouro.Size = new System.Drawing.Size(739, 20);
-            this.textBoxNome_Logradouro.TabIndex = 3;
+            this.textBoxNome_Logradouro.TabIndex = 26;
             // 
             // label9
             // 
@@ -279,7 +285,7 @@
             this.comboBoxTipo_Logradouro.MaxLength = 20;
             this.comboBoxTipo_Logradouro.Name = "comboBoxTipo_Logradouro";
             this.comboBoxTipo_Logradouro.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxTipo_Logradouro.TabIndex = 1;
+            this.comboBoxTipo_Logradouro.TabIndex = 23;
             this.comboBoxTipo_Logradouro.SelectedIndexChanged += new System.EventHandler(this.comboBoxTipo_Logradouro_SelectedIndexChanged);
             // 
             // label8
@@ -298,7 +304,7 @@
             this.maskedTextBoxCEP.Mask = "00000-999";
             this.maskedTextBoxCEP.Name = "maskedTextBoxCEP";
             this.maskedTextBoxCEP.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxCEP.TabIndex = 17;
+            this.maskedTextBoxCEP.TabIndex = 24;
             // 
             // label15
             // 
@@ -343,7 +349,7 @@
             this.groupBoxIdentificacao.Location = new System.Drawing.Point(18, 76);
             this.groupBoxIdentificacao.Name = "groupBoxIdentificacao";
             this.groupBoxIdentificacao.Size = new System.Drawing.Size(846, 229);
-            this.groupBoxIdentificacao.TabIndex = 31;
+            this.groupBoxIdentificacao.TabIndex = 1;
             this.groupBoxIdentificacao.TabStop = false;
             this.groupBoxIdentificacao.Text = "Identificação";
             this.groupBoxIdentificacao.Enter += new System.EventHandler(this.groupBoxIdentificacao_Enter);
@@ -354,7 +360,7 @@
             this.maskedTextBoxCNPJ.Mask = "00,000,000/0000-00";
             this.maskedTextBoxCNPJ.Name = "maskedTextBoxCNPJ";
             this.maskedTextBoxCNPJ.Size = new System.Drawing.Size(119, 20);
-            this.maskedTextBoxCNPJ.TabIndex = 60;
+            this.maskedTextBoxCNPJ.TabIndex = 19;
             // 
             // maskedTextBoxCPF
             // 
@@ -362,7 +368,7 @@
             this.maskedTextBoxCPF.Mask = "000,000,000-00";
             this.maskedTextBoxCPF.Name = "maskedTextBoxCPF";
             this.maskedTextBoxCPF.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxCPF.TabIndex = 59;
+            this.maskedTextBoxCPF.TabIndex = 17;
             // 
             // textBoxIdentificacao3
             // 
@@ -370,7 +376,7 @@
             this.textBoxIdentificacao3.MaxLength = 50;
             this.textBoxIdentificacao3.Name = "textBoxIdentificacao3";
             this.textBoxIdentificacao3.Size = new System.Drawing.Size(176, 20);
-            this.textBoxIdentificacao3.TabIndex = 58;
+            this.textBoxIdentificacao3.TabIndex = 14;
             // 
             // label27
             // 
@@ -387,7 +393,7 @@
             this.textBoxIdentificacao2.MaxLength = 50;
             this.textBoxIdentificacao2.Name = "textBoxIdentificacao2";
             this.textBoxIdentificacao2.Size = new System.Drawing.Size(176, 20);
-            this.textBoxIdentificacao2.TabIndex = 56;
+            this.textBoxIdentificacao2.TabIndex = 12;
             // 
             // textBoxIdentificacao1
             // 
@@ -395,7 +401,7 @@
             this.textBoxIdentificacao1.MaxLength = 50;
             this.textBoxIdentificacao1.Name = "textBoxIdentificacao1";
             this.textBoxIdentificacao1.Size = new System.Drawing.Size(176, 20);
-            this.textBoxIdentificacao1.TabIndex = 55;
+            this.textBoxIdentificacao1.TabIndex = 10;
             // 
             // label28
             // 
@@ -421,7 +427,7 @@
             this.textBoxIdentificador3.MaxLength = 50;
             this.textBoxIdentificador3.Name = "textBoxIdentificador3";
             this.textBoxIdentificador3.Size = new System.Drawing.Size(176, 20);
-            this.textBoxIdentificador3.TabIndex = 52;
+            this.textBoxIdentificador3.TabIndex = 13;
             this.textBoxIdentificador3.TextChanged += new System.EventHandler(this.Identificador3_TextChanged);
             // 
             // label26
@@ -440,7 +446,7 @@
             this.textBoxIdentificador2.MaxLength = 50;
             this.textBoxIdentificador2.Name = "textBoxIdentificador2";
             this.textBoxIdentificador2.Size = new System.Drawing.Size(176, 20);
-            this.textBoxIdentificador2.TabIndex = 50;
+            this.textBoxIdentificador2.TabIndex = 11;
             this.textBoxIdentificador2.TextChanged += new System.EventHandler(this.textBoxIdentificador2_TextChanged);
             // 
             // textBoxIdentificador1
@@ -449,7 +455,7 @@
             this.textBoxIdentificador1.MaxLength = 50;
             this.textBoxIdentificador1.Name = "textBoxIdentificador1";
             this.textBoxIdentificador1.Size = new System.Drawing.Size(176, 20);
-            this.textBoxIdentificador1.TabIndex = 49;
+            this.textBoxIdentificador1.TabIndex = 9;
             // 
             // labelIdentificador2
             // 
@@ -477,7 +483,7 @@
             this.maskedTextBoxDesde.Mask = "00/00/0000 90:00";
             this.maskedTextBoxDesde.Name = "maskedTextBoxDesde";
             this.maskedTextBoxDesde.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBoxDesde.TabIndex = 46;
+            this.maskedTextBoxDesde.TabIndex = 22;
             this.maskedTextBoxDesde.ValidatingType = typeof(System.DateTime);
             // 
             // label24
@@ -492,10 +498,10 @@
             // maskedTextBox_Nascimento
             // 
             this.maskedTextBox_Nascimento.Location = new System.Drawing.Point(84, 179);
-            this.maskedTextBox_Nascimento.Mask = "00/00/0000 90:00";
+            this.maskedTextBox_Nascimento.Mask = "00/00/0000";
             this.maskedTextBox_Nascimento.Name = "maskedTextBox_Nascimento";
             this.maskedTextBox_Nascimento.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox_Nascimento.TabIndex = 44;
+            this.maskedTextBox_Nascimento.TabIndex = 21;
             this.maskedTextBox_Nascimento.ValidatingType = typeof(System.DateTime);
             // 
             // label23
@@ -513,7 +519,7 @@
             this.textBoxApelido.MaxLength = 50;
             this.textBoxApelido.Name = "textBoxApelido";
             this.textBoxApelido.Size = new System.Drawing.Size(540, 20);
-            this.textBoxApelido.TabIndex = 42;
+            this.textBoxApelido.TabIndex = 16;
             // 
             // label5
             // 
@@ -529,7 +535,7 @@
             this.textBoxRG.Location = new System.Drawing.Point(67, 97);
             this.textBoxRG.Name = "textBoxRG";
             this.textBoxRG.Size = new System.Drawing.Size(100, 20);
-            this.textBoxRG.TabIndex = 40;
+            this.textBoxRG.TabIndex = 15;
             // 
             // label2
             // 
@@ -546,7 +552,7 @@
             this.textBoxNome.MaxLength = 70;
             this.textBoxNome.Name = "textBoxNome";
             this.textBoxNome.Size = new System.Drawing.Size(540, 20);
-            this.textBoxNome.TabIndex = 38;
+            this.textBoxNome.TabIndex = 18;
             // 
             // label6
             // 
@@ -572,7 +578,7 @@
             this.textBoxRazao_Social.MaxLength = 140;
             this.textBoxRazao_Social.Name = "textBoxRazao_Social";
             this.textBoxRazao_Social.Size = new System.Drawing.Size(540, 20);
-            this.textBoxRazao_Social.TabIndex = 34;
+            this.textBoxRazao_Social.TabIndex = 20;
             // 
             // label7
             // 
@@ -611,7 +617,7 @@
             this.radioButtonPessoaJuridica.Location = new System.Drawing.Point(117, 19);
             this.radioButtonPessoaJuridica.Name = "radioButtonPessoaJuridica";
             this.radioButtonPessoaJuridica.Size = new System.Drawing.Size(101, 17);
-            this.radioButtonPessoaJuridica.TabIndex = 1;
+            this.radioButtonPessoaJuridica.TabIndex = 8;
             this.radioButtonPessoaJuridica.Text = "Pessoa Jurídica";
             this.radioButtonPessoaJuridica.UseVisualStyleBackColor = true;
             // 
@@ -622,7 +628,7 @@
             this.radioButtonPessoaFisica.Location = new System.Drawing.Point(6, 19);
             this.radioButtonPessoaFisica.Name = "radioButtonPessoaFisica";
             this.radioButtonPessoaFisica.Size = new System.Drawing.Size(92, 17);
-            this.radioButtonPessoaFisica.TabIndex = 0;
+            this.radioButtonPessoaFisica.TabIndex = 7;
             this.radioButtonPessoaFisica.TabStop = true;
             this.radioButtonPessoaFisica.Text = "Pessoa Física";
             this.radioButtonPessoaFisica.UseVisualStyleBackColor = true;
@@ -644,7 +650,7 @@
             this.groupBox4.Location = new System.Drawing.Point(18, 494);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(460, 125);
-            this.groupBox4.TabIndex = 32;
+            this.groupBox4.TabIndex = 3;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Telefone ";
             // 
@@ -659,7 +665,7 @@
             this.comboBoxTipo_Telefone_3.Location = new System.Drawing.Point(312, 74);
             this.comboBoxTipo_Telefone_3.Name = "comboBoxTipo_Telefone_3";
             this.comboBoxTipo_Telefone_3.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxTipo_Telefone_3.TabIndex = 11;
+            this.comboBoxTipo_Telefone_3.TabIndex = 37;
             // 
             // label20
             // 
@@ -676,7 +682,7 @@
             this.maskedTextBoxTelefone3.Mask = "+00 (00) 00.0000-0000";
             this.maskedTextBoxTelefone3.Name = "maskedTextBoxTelefone3";
             this.maskedTextBoxTelefone3.Size = new System.Drawing.Size(140, 20);
-            this.maskedTextBoxTelefone3.TabIndex = 9;
+            this.maskedTextBoxTelefone3.TabIndex = 36;
             // 
             // label21
             // 
@@ -698,7 +704,7 @@
             this.comboBoxTipo_Telefone_2.Location = new System.Drawing.Point(312, 47);
             this.comboBoxTipo_Telefone_2.Name = "comboBoxTipo_Telefone_2";
             this.comboBoxTipo_Telefone_2.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxTipo_Telefone_2.TabIndex = 7;
+            this.comboBoxTipo_Telefone_2.TabIndex = 35;
             // 
             // label18
             // 
@@ -715,7 +721,7 @@
             this.maskedTextBoxTelefone2.Mask = "+00 (00) 00.0000-0000";
             this.maskedTextBoxTelefone2.Name = "maskedTextBoxTelefone2";
             this.maskedTextBoxTelefone2.Size = new System.Drawing.Size(140, 20);
-            this.maskedTextBoxTelefone2.TabIndex = 5;
+            this.maskedTextBoxTelefone2.TabIndex = 34;
             // 
             // label19
             // 
@@ -737,7 +743,7 @@
             this.comboBoxTipo_Telefone_1.Location = new System.Drawing.Point(312, 20);
             this.comboBoxTipo_Telefone_1.Name = "comboBoxTipo_Telefone_1";
             this.comboBoxTipo_Telefone_1.Size = new System.Drawing.Size(121, 21);
-            this.comboBoxTipo_Telefone_1.TabIndex = 3;
+            this.comboBoxTipo_Telefone_1.TabIndex = 33;
             // 
             // label17
             // 
@@ -754,7 +760,7 @@
             this.maskedTextBoxTelefone1.Mask = "+00 (00) 00.0000-0000";
             this.maskedTextBoxTelefone1.Name = "maskedTextBoxTelefone1";
             this.maskedTextBoxTelefone1.Size = new System.Drawing.Size(140, 20);
-            this.maskedTextBoxTelefone1.TabIndex = 1;
+            this.maskedTextBoxTelefone1.TabIndex = 32;
             // 
             // label16
             // 
@@ -781,7 +787,7 @@
             this.textBoxObservacoes.Multiline = true;
             this.textBoxObservacoes.Name = "textBoxObservacoes";
             this.textBoxObservacoes.Size = new System.Drawing.Size(380, 90);
-            this.textBoxObservacoes.TabIndex = 13;
+            this.textBoxObservacoes.TabIndex = 38;
             // 
             // groupBox5
             // 
@@ -791,7 +797,7 @@
             this.groupBox5.Location = new System.Drawing.Point(18, 625);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(846, 71);
-            this.groupBox5.TabIndex = 33;
+            this.groupBox5.TabIndex = 4;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Classificação ";
             // 
@@ -801,7 +807,7 @@
             this.checkBoxParticular.Location = new System.Drawing.Point(312, 32);
             this.checkBoxParticular.Name = "checkBoxParticular";
             this.checkBoxParticular.Size = new System.Drawing.Size(70, 17);
-            this.checkBoxParticular.TabIndex = 2;
+            this.checkBoxParticular.TabIndex = 41;
             this.checkBoxParticular.Text = "Particular";
             this.checkBoxParticular.UseVisualStyleBackColor = true;
             // 
@@ -811,7 +817,7 @@
             this.checkBoxFornecedor.Location = new System.Drawing.Point(170, 32);
             this.checkBoxFornecedor.Name = "checkBoxFornecedor";
             this.checkBoxFornecedor.Size = new System.Drawing.Size(80, 17);
-            this.checkBoxFornecedor.TabIndex = 1;
+            this.checkBoxFornecedor.TabIndex = 40;
             this.checkBoxFornecedor.Text = "Fornecedor";
             this.checkBoxFornecedor.UseVisualStyleBackColor = true;
             // 
@@ -821,32 +827,34 @@
             this.checkBoxCliente.Location = new System.Drawing.Point(10, 32);
             this.checkBoxCliente.Name = "checkBoxCliente";
             this.checkBoxCliente.Size = new System.Drawing.Size(58, 17);
-            this.checkBoxCliente.TabIndex = 0;
+            this.checkBoxCliente.TabIndex = 39;
             this.checkBoxCliente.Text = "Cliente";
             this.checkBoxCliente.UseVisualStyleBackColor = true;
             // 
             // groupBoxBotoes
             // 
+            this.groupBoxBotoes.Controls.Add(this.buttonNovo);
+            this.groupBoxBotoes.Controls.Add(this.radioButtonNomeRazaoSocialApelido);
             this.groupBoxBotoes.Controls.Add(this.comboBoxPessoas);
             this.groupBoxBotoes.Controls.Add(this.radioButtonIdentificadoresEspeciais);
             this.groupBoxBotoes.Controls.Add(this.radioButtonCPF);
             this.groupBoxBotoes.Controls.Add(this.radioButtonCNPJ);
             this.groupBoxBotoes.Controls.Add(this.buttonLocalizar);
             this.groupBoxBotoes.Controls.Add(this.buttonSalvar);
-            this.groupBoxBotoes.Location = new System.Drawing.Point(18, 12);
+            this.groupBoxBotoes.Location = new System.Drawing.Point(18, 9);
             this.groupBoxBotoes.Name = "groupBoxBotoes";
-            this.groupBoxBotoes.Size = new System.Drawing.Size(847, 58);
-            this.groupBoxBotoes.TabIndex = 34;
+            this.groupBoxBotoes.Size = new System.Drawing.Size(847, 66);
+            this.groupBoxBotoes.TabIndex = 0;
             this.groupBoxBotoes.TabStop = false;
             this.groupBoxBotoes.Text = "Botões de Ação ";
             // 
             // radioButtonIdentificadoresEspeciais
             // 
             this.radioButtonIdentificadoresEspeciais.AutoSize = true;
-            this.radioButtonIdentificadoresEspeciais.Location = new System.Drawing.Point(336, 24);
+            this.radioButtonIdentificadoresEspeciais.Location = new System.Drawing.Point(314, 35);
             this.radioButtonIdentificadoresEspeciais.Name = "radioButtonIdentificadoresEspeciais";
             this.radioButtonIdentificadoresEspeciais.Size = new System.Drawing.Size(141, 17);
-            this.radioButtonIdentificadoresEspeciais.TabIndex = 37;
+            this.radioButtonIdentificadoresEspeciais.TabIndex = 5;
             this.radioButtonIdentificadoresEspeciais.Text = "Identificadores especiais";
             this.radioButtonIdentificadoresEspeciais.UseVisualStyleBackColor = true;
             // 
@@ -854,28 +862,30 @@
             // 
             this.radioButtonCPF.AutoSize = true;
             this.radioButtonCPF.Checked = true;
-            this.radioButtonCPF.Location = new System.Drawing.Point(208, 26);
+            this.radioButtonCPF.Location = new System.Drawing.Point(256, 18);
             this.radioButtonCPF.Name = "radioButtonCPF";
             this.radioButtonCPF.Size = new System.Drawing.Size(45, 17);
-            this.radioButtonCPF.TabIndex = 36;
+            this.radioButtonCPF.TabIndex = 2;
             this.radioButtonCPF.TabStop = true;
             this.radioButtonCPF.Text = "CPF";
             this.radioButtonCPF.UseVisualStyleBackColor = true;
+            this.radioButtonCPF.CheckedChanged += new System.EventHandler(this.radioButtonCPF_CheckedChanged);
             // 
             // radioButtonCNPJ
             // 
             this.radioButtonCNPJ.AutoSize = true;
-            this.radioButtonCNPJ.Location = new System.Drawing.Point(272, 26);
+            this.radioButtonCNPJ.Location = new System.Drawing.Point(256, 35);
             this.radioButtonCNPJ.Name = "radioButtonCNPJ";
             this.radioButtonCNPJ.Size = new System.Drawing.Size(52, 17);
-            this.radioButtonCNPJ.TabIndex = 2;
+            this.radioButtonCNPJ.TabIndex = 3;
             this.radioButtonCNPJ.Text = "CNPJ";
             this.radioButtonCNPJ.UseVisualStyleBackColor = true;
+            this.radioButtonCNPJ.CheckedChanged += new System.EventHandler(this.radioButtonCNPJ_CheckedChanged);
             // 
             // buttonLocalizar
             // 
             this.buttonLocalizar.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonLocalizar.Location = new System.Drawing.Point(97, 18);
+            this.buttonLocalizar.Location = new System.Drawing.Point(92, 18);
             this.buttonLocalizar.Name = "buttonLocalizar";
             this.buttonLocalizar.Size = new System.Drawing.Size(75, 23);
             this.buttonLocalizar.TabIndex = 1;
@@ -909,14 +919,60 @@
             this.comboBoxPessoas.Location = new System.Drawing.Point(483, 18);
             this.comboBoxPessoas.Name = "comboBoxPessoas";
             this.comboBoxPessoas.Size = new System.Drawing.Size(358, 21);
-            this.comboBoxPessoas.TabIndex = 38;
+            this.comboBoxPessoas.TabIndex = 6;
             this.comboBoxPessoas.SelectedIndexChanged += new System.EventHandler(this.comboBoxPessoas_SelectedIndexChanged);
+            // 
+            // radioButtonNomeRazaoSocialApelido
+            // 
+            this.radioButtonNomeRazaoSocialApelido.AutoSize = true;
+            this.radioButtonNomeRazaoSocialApelido.Location = new System.Drawing.Point(314, 20);
+            this.radioButtonNomeRazaoSocialApelido.Name = "radioButtonNomeRazaoSocialApelido";
+            this.radioButtonNomeRazaoSocialApelido.Size = new System.Drawing.Size(161, 17);
+            this.radioButtonNomeRazaoSocialApelido.TabIndex = 4;
+            this.radioButtonNomeRazaoSocialApelido.Text = "Nome/Razão Social/Apelido";
+            this.radioButtonNomeRazaoSocialApelido.UseVisualStyleBackColor = true;
+            this.radioButtonNomeRazaoSocialApelido.CheckedChanged += new System.EventHandler(this.radioButtonNomeRazaoSocialApelido_CheckedChanged);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(895, 20);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(227, 175);
+            this.pictureBox1.TabIndex = 39;
+            this.pictureBox1.TabStop = false;
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // buttonFoto
+            // 
+            this.buttonFoto.Location = new System.Drawing.Point(895, 203);
+            this.buttonFoto.Name = "buttonFoto";
+            this.buttonFoto.Size = new System.Drawing.Size(129, 23);
+            this.buttonFoto.TabIndex = 40;
+            this.buttonFoto.Text = "Procurar Foto";
+            this.buttonFoto.UseVisualStyleBackColor = true;
+            this.buttonFoto.Click += new System.EventHandler(this.buttonFoto_Click);
+            // 
+            // buttonNovo
+            // 
+            this.buttonNovo.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonNovo.Location = new System.Drawing.Point(170, 19);
+            this.buttonNovo.Name = "buttonNovo";
+            this.buttonNovo.Size = new System.Drawing.Size(75, 23);
+            this.buttonNovo.TabIndex = 7;
+            this.buttonNovo.Text = "&Novo";
+            this.buttonNovo.UseVisualStyleBackColor = false;
+            this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
             // FormCadastrodePessoas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(902, 749);
+            this.ClientSize = new System.Drawing.Size(1146, 749);
+            this.Controls.Add(this.buttonFoto);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label25);
             this.Controls.Add(this.groupBoxBotoes);
             this.Controls.Add(this.groupBox5);
@@ -943,6 +999,7 @@
             this.groupBox5.PerformLayout();
             this.groupBoxBotoes.ResumeLayout(false);
             this.groupBoxBotoes.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1028,5 +1085,10 @@
         private System.Windows.Forms.RadioButton radioButtonCPF;
         private System.Windows.Forms.RadioButton radioButtonCNPJ;
         private System.Windows.Forms.ComboBox comboBoxPessoas;
+        private System.Windows.Forms.RadioButton radioButtonNomeRazaoSocialApelido;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.Button buttonFoto;
+        private System.Windows.Forms.Button buttonNovo;
     }
 }

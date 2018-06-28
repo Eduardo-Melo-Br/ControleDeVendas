@@ -137,6 +137,7 @@ namespace WindowsFormsAppControleDeVendas
             System.Data.OleDb.OleDbDataReader _DataReader;
 
             String _strString;
+            Boolean _Salvar;
             
             _OleDbConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DatabaseControleDeVendas.accdb;Persist Security Info=False;";
             _OleDbConnection.Open();
@@ -144,12 +145,13 @@ namespace WindowsFormsAppControleDeVendas
             if (radioButtonCPF.Checked)
             {
                 _strString = _strString + " CPF = '" + maskedTextBoxCPF.Text + "';";
-            }
-            if (radioButtonCNPJ.Checked)
+                _Salvar = true;
+            } else if (radioButtonCNPJ.Checked)
             {
                 _strString = _strString + " CNPJ = '" + maskedTextBoxCNPJ.Text + "'; ";
+                _Salvar = true;
             }
-            if (radioButtonIdentificadoresEspeciais.Checked)
+            else if (radioButtonIdentificadoresEspeciais.Checked)
             {
                 _strString = _strString + " (Identificador1 = '" + this.textBoxIdentificador1.Text + "' OR ";
                 _strString = _strString + "  Identificador2 = '" + this.textBoxIdentificador2.Text + "' OR ";
@@ -157,11 +159,19 @@ namespace WindowsFormsAppControleDeVendas
                 _strString = _strString + "  Identificacao1 = '" + this.textBoxIdentificacao1.Text + "' OR ";
                 _strString = _strString + "  Identificacao2 = '" + this.textBoxIdentificacao2.Text + "' OR ";
                 _strString = _strString + "  Identificacao3 = '" + this.textBoxIdentificacao3.Text + "');";
+                _Salvar = true;
+            } else
+            {
+                MessageBox.Show("Selecione algum dos critérios CPF/CNPJ/Identificadores especiais");
+                _Salvar = false;
             }
-            _OleDbCommand.CommandText = _strString;
-            _OleDbCommand.Connection = _OleDbConnection;
-            _DataReader = _OleDbCommand.ExecuteReader();
-            _DataReader.Read();
+
+            if (_Salvar)
+            {
+                _OleDbCommand.CommandText = _strString;
+                _OleDbCommand.Connection = _OleDbConnection;
+                _DataReader = _OleDbCommand.ExecuteReader();
+                _DataReader.Read();
                 if (Convert.ToInt16(_DataReader[0].ToString()) > 0)
                 {
                     _strString = "UPDATE TabelaControleDeVendaPessoa SET ";
@@ -197,7 +207,8 @@ namespace WindowsFormsAppControleDeVendas
                     _strString = _strString + "IDENTIFICACAO1 = ?, ";
                     _strString = _strString + "IDENTIFICACAO2 = ?, ";
                     _strString = _strString + "IDENTIFICACAO3 = ?, ";
-                    _strString = _strString + "PAIS = ? ";
+                    _strString = _strString + "PAIS = ?, ";
+                    _strString = _strString + "FOTO = ? ";
                     _strString = _strString + "WHERE Código = " + _DataReader[0].ToString();
                     _DataReader.Close();
                     _OleDbCommand.CommandText = _strString;
@@ -224,7 +235,14 @@ namespace WindowsFormsAppControleDeVendas
                     _OleDbCommand.Parameters.Add("@NUMERO_TELEFONE_3", OleDbType.Char, 20).Value = maskedTextBoxTelefone3.Text; ;
                     _OleDbCommand.Parameters.Add("@TIPO_TELEFONE_3", OleDbType.Char, 20).Value = comboBoxTipo_Telefone_3.Text;
                     _OleDbCommand.Parameters.Add("@OBSERVACOES", OleDbType.Char, 255).Value = textBoxObservacoes.Text;
-                    _OleDbCommand.Parameters.Add("@NASCIMENTO", OleDbType.Date).Value = maskedTextBox_Nascimento.Text;
+                    if (maskedTextBox_Nascimento.Text == "  /  /    ")
+                    {
+                        _OleDbCommand.Parameters.Add("@NASCIMENTO", OleDbType.Date).Value = null;
+                    }
+                    else
+                    {
+                        _OleDbCommand.Parameters.Add("@NASCIMENTO", OleDbType.Date).Value = maskedTextBox_Nascimento.Text;
+                    }
                     _OleDbCommand.Parameters.Add("@CLIENTE", OleDbType.Boolean).Value = checkBoxCliente.Checked;
                     _OleDbCommand.Parameters.Add("@FORNECEDOR", OleDbType.Boolean).Value = checkBoxFornecedor.Checked;
                     _OleDbCommand.Parameters.Add("@PARTICULAR", OleDbType.Boolean).Value = checkBoxParticular.Checked;
@@ -235,9 +253,11 @@ namespace WindowsFormsAppControleDeVendas
                     _OleDbCommand.Parameters.Add("@IDENTIFICACAO2", OleDbType.Char, 50).Value = textBoxIdentificacao2.Text;
                     _OleDbCommand.Parameters.Add("@IDENTIFICACAO3", OleDbType.Char, 50).Value = textBoxIdentificacao3.Text;
                     _OleDbCommand.Parameters.Add("@PAIS", OleDbType.Char, 50).Value = textBoxPais.Text;
+                    _OleDbCommand.Parameters.Add("@FOTO", OleDbType.Char, 255).Value = pictureBox1.ImageLocation;
                     try
                     {
                         _OleDbCommand.ExecuteNonQuery();
+                        MessageBox.Show("Pessoa atualizada ...");
                     }
                     catch (Exception e)
                     {
@@ -279,7 +299,7 @@ namespace WindowsFormsAppControleDeVendas
                     _strString = _strString + "IDENTIFICACAO1, ";
                     _strString = _strString + "IDENTIFICACAO2, ";
                     _strString = _strString + "IDENTIFICACAO3, ";
-                    _strString = _strString + "PAIS) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
+                    _strString = _strString + "PAIS, FOTO) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?);";
                     _DataReader.Close();
                     _OleDbCommand.CommandText = _strString;
                     _OleDbCommand.Connection = _OleDbConnection;
@@ -305,7 +325,14 @@ namespace WindowsFormsAppControleDeVendas
                     _OleDbCommand.Parameters.Add("@NUMERO_TELEFONE_3", OleDbType.Char, 20).Value = maskedTextBoxTelefone3.Text; ;
                     _OleDbCommand.Parameters.Add("@TIPO_TELEFONE_3", OleDbType.Char, 20).Value = comboBoxTipo_Telefone_3.Text;
                     _OleDbCommand.Parameters.Add("@OBSERVACOES", OleDbType.Char, 255).Value = textBoxObservacoes.Text;
-                    _OleDbCommand.Parameters.Add("@NASCIMENTO", OleDbType.Date).Value = maskedTextBox_Nascimento.Text;
+                    if (maskedTextBox_Nascimento.Text == "  /  /")
+                    {
+                        _OleDbCommand.Parameters.Add("@NASCIMENTO", OleDbType.Date).Value = "01/01/1700"; // Data para sem nascimento
+                    }
+                    else
+                    {
+                        _OleDbCommand.Parameters.Add("@NASCIMENTO", OleDbType.Date).Value = maskedTextBox_Nascimento.Text;
+                    }
                     _OleDbCommand.Parameters.Add("@CLIENTE", OleDbType.Boolean).Value = checkBoxCliente.Checked;
                     _OleDbCommand.Parameters.Add("@FORNECEDOR", OleDbType.Boolean).Value = checkBoxFornecedor.Checked;
                     _OleDbCommand.Parameters.Add("@PARTICULAR", OleDbType.Boolean).Value = checkBoxParticular.Checked;
@@ -316,9 +343,11 @@ namespace WindowsFormsAppControleDeVendas
                     _OleDbCommand.Parameters.Add("@IDENTIFICACAO2", OleDbType.Char, 50).Value = textBoxIdentificacao2.Text;
                     _OleDbCommand.Parameters.Add("@IDENTIFICACAO3", OleDbType.Char, 50).Value = textBoxIdentificacao3.Text;
                     _OleDbCommand.Parameters.Add("@PAIS", OleDbType.Char, 50).Value = textBoxPais.Text;
+                    _OleDbCommand.Parameters.Add("@FOTO", OleDbType.Char, 255).Value = pictureBox1.ImageLocation;
                     try
                     {
                         _OleDbCommand.ExecuteNonQuery();
+                        MessageBox.Show("Pessoa salva ...");
                     }
                     catch (ArgumentException e)
                     {
@@ -326,7 +355,8 @@ namespace WindowsFormsAppControleDeVendas
                     }
                 }
 
-            _OleDbConnection.Close();
+                _OleDbConnection.Close();
+            }
         }
 
         private void buttonSalvar_Click(object sender, EventArgs e)
@@ -362,6 +392,12 @@ namespace WindowsFormsAppControleDeVendas
                 _strString = _strString + "  Identificacao2 = '" + this.textBoxIdentificacao2.Text + "' OR ";
                 _strString = _strString + "  Identificacao3 = '" + this.textBoxIdentificacao3.Text + "');";
             }
+            if (radioButtonNomeRazaoSocialApelido.Checked)
+            {
+                _strString = _strString + " (NOME = '" + this.comboBoxPessoas.Text + "' OR ";
+                _strString = _strString + "  RAZAO_SOCIAL = '" + this.comboBoxPessoas.Text + "' OR ";
+                _strString = _strString + "  APELIDO = '" + this.comboBoxPessoas.Text + "')";
+            }
             _OleDbCommand.CommandText = _strString;
             _OleDbCommand.Connection = _OleDbConnection;
             _DataReader = _OleDbCommand.ExecuteReader();
@@ -370,7 +406,6 @@ namespace WindowsFormsAppControleDeVendas
             int intContador = 0;
             while (_DataReader.Read())
             {
-                MessageBox.Show(_DataReader[5] + " " + _DataReader[6]);
                 comboBoxPessoas.Items.Add(_DataReader[5] + " " + _DataReader[6]);
                 idPessoas[intContador] = (int)_DataReader[0];
                 intContador++;
@@ -388,15 +423,102 @@ namespace WindowsFormsAppControleDeVendas
 
             _OleDbConnection.ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=DatabaseControleDeVendas.accdb;Persist Security Info=False;";
             _OleDbConnection.Open();
-            _strString = "SELECT * FROM TabelaControleDeVendaPessoa WHERE [Código] = " + (char)idPessoas[comboBoxPessoas.SelectedIndex];
+            _strString = "SELECT * FROM TabelaControleDeVendaPessoa WHERE [Código] = ?;";
             _OleDbCommand.CommandText = _strString;
             _OleDbCommand.Connection = _OleDbConnection;
+            _OleDbCommand.Parameters.Add("@ID", OleDbType.Integer).Value = idPessoas[comboBoxPessoas.SelectedIndex];
             _DataReader = _OleDbCommand.ExecuteReader();
             if (_DataReader.Read())
             {
+                if (Convert.ToBoolean(_DataReader["PF_PJ"]) == true)
+                {
+                    radioButtonPessoaFisica.Checked = true;
+                    radioButtonPessoaJuridica.Checked = false;
+                } else
+                {
+                    radioButtonPessoaFisica.Checked = false;
+                    radioButtonPessoaJuridica.Checked = true;
+                }
+                maskedTextBoxCPF.Text = Convert.ToString(_DataReader["CPF"]);
+                maskedTextBoxCNPJ.Text = Convert.ToString(_DataReader["CNPJ"]);
+                textBoxRG.Text = Convert.ToString(_DataReader["DOCUMENTO_IDENTIDADE"]);
+                textBoxNome.Text = Convert.ToString(_DataReader["NOME"]);
+                textBoxRazao_Social.Text = Convert.ToString(_DataReader["RAZAO_SOCIAL"]);
+                comboBoxTipo_Logradouro.Text = Convert.ToString(_DataReader["TIPO_LOGRADOURO"]);
+                textBoxNome_Logradouro.Text = Convert.ToString(_DataReader["NOME_LOGRADOURO"]);
+                maskedTextBoxNumeroLote.Text = Convert.ToString(_DataReader["NUMERO_LOTE"]);
+                textBoxComplemento.Text = Convert.ToString(_DataReader["COMPLEMENTO"]);
+                textBoxBairro.Text = Convert.ToString(_DataReader["BAIRRO"]);
+                textBoxLocalidade.Text = Convert.ToString(_DataReader["LOCALIDADE"]);
+                comboBoxUF.Text = Convert.ToString(_DataReader["UF"]);
+                maskedTextBoxCEP.Text = Convert.ToString(_DataReader["CEP"]);
+                textBoxApelido.Text = Convert.ToString(_DataReader["APELIDO"]);
+                maskedTextBoxTelefone1.Text = Convert.ToString(_DataReader["NUMERO_TELEFONE_1"]);
+                comboBoxTipo_Telefone_1.Text = Convert.ToString(_DataReader["TIPO_TELEFONE_1"]);
+                maskedTextBoxTelefone2.Text = Convert.ToString(_DataReader["NUMERO_TELEFONE_2"]);
+                comboBoxTipo_Telefone_2.Text = Convert.ToString(_DataReader["TIPO_TELEFONE_2"]);
+                maskedTextBoxTelefone3.Text = Convert.ToString(_DataReader["NUMERO_TELEFONE_3"]);
+                comboBoxTipo_Telefone_3.Text = Convert.ToString(_DataReader["TIPO_TELEFONE_3"]);
+                textBoxObservacoes.Text = Convert.ToString(_DataReader["OBSERVACOES"]);
+                if (Convert.ToString(_DataReader["NASCIMENTO"]) == "01/01/1700 00:00:00")
+                {
+                    maskedTextBox_Nascimento.Text = "  /  /";
+                } else
+                {
+                    maskedTextBox_Nascimento.Text = Convert.ToString(_DataReader["NASCIMENTO"]);
+                }
                 
+                checkBoxCliente.Checked = Convert.ToBoolean(_DataReader["CLIENTE"]);
+                checkBoxFornecedor.Checked = Convert.ToBoolean(_DataReader["FORNECEDOR"]);
+                checkBoxParticular.Checked = Convert.ToBoolean(_DataReader["PARTICULAR"]);
+                textBoxIdentificador1.Text = Convert.ToString(_DataReader["IDENTIFICADOR1"]);
+                textBoxIdentificador2.Text = Convert.ToString(_DataReader["IDENTIFICADOR2"]);
+                textBoxIdentificador3.Text = Convert.ToString(_DataReader["IDENTIFICADOR3"]);
+                textBoxIdentificacao1.Text = Convert.ToString(_DataReader["IDENTIFICACAO1"]);
+                textBoxIdentificacao2.Text = Convert.ToString(_DataReader["IDENTIFICACAO2"]);
+                textBoxIdentificacao3.Text = Convert.ToString(_DataReader["IDENTIFICACAO3"]);
+                textBoxPais.Text = Convert.ToString(_DataReader["PAIS"]);
+                pictureBox1.ImageLocation = Convert.ToString(_DataReader["FOTO"]);
             }
             _OleDbConnection.Close();
+        }
+
+        private void buttonFoto_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.ImageLocation = openFileDialog1.FileName;
+                pictureBox1.Show();
+            }
+        }
+
+        private void radioButtonCPF_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonCNPJ_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void radioButtonNomeRazaoSocialApelido_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonNovo_Click(object sender, EventArgs e)
+        {
+            textBoxRG.Text = "";
+            maskedTextBoxCPF.Text = "";
+            maskedTextBoxCNPJ.Text = "";
+            textBoxApelido.Text = "";
+            textBoxNome.Text = "";
+            textBoxRazao_Social.Text = "";
+            maskedTextBox_Nascimento.Text = "";
+            maskedTextBoxDesde.Text = "";
+            pictureBox1.ImageLocation = "";
+
         }
     }
 }
