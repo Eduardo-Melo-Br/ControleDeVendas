@@ -9,3 +9,8 @@ C:\Users\Eduardo Melo\Documents\Visual Studio 2017\Projects\WindowsFormsAppContr
 C:\Users\Eduardo Melo\Documents\Visual Studio 2017\Projects\WindowsFormsAppControleDeVendas\WindowsFormsAppControleDeVendas\obj\Debug\WindowsFormsAppControleDeVendas.exe
 C:\Users\Eduardo Melo\Documents\Visual Studio 2017\Projects\WindowsFormsAppControleDeVendas\WindowsFormsAppControleDeVendas\obj\Debug\WindowsFormsAppControleDeVendas.pdb
 C:\Users\Eduardo Melo\Documents\Visual Studio 2017\Projects\WindowsFormsAppControleDeVendas\WindowsFormsAppControleDeVendas\obj\Debug\WindowsFormsAppControleDeVendas.FormCadastrodePessoas.resources
+C:\Users\Eduardo Melo\Documents\Visual Studio 2017\Projects\WindowsFormsAppControleDeVendas\WindowsFormsAppControleDeVendas\obj\Debug\WindowsFormsAppControleDeVendas.FormCadastrodeProdutoseServicos.resources
+C:\Users\Eduardo Melo\Documents\Visual Studio 2017\Projects\WindowsFormsAppControleDeVendas\WindowsFormsAppControleDeVendas\obj\Debug\WindowsFormsAppControleDeVendas.FormCadastrodeDepartamentos.resources
+C:\Users\Eduardo Melo\Documents\Visual Studio 2017\Projects\WindowsFormsAppControleDeVendas\WindowsFormsAppControleDeVendas\obj\Debug\WindowsFormsAppControleDeVendas.AboutBox1.resources
+C:\Users\Eduardo Melo\Documents\Visual Studio 2017\Projects\WindowsFormsAppControleDeVendas\WindowsFormsAppControleDeVendas\obj\Debug\WindowsFormsAppControleDeVendas.FormSplash.resources
+C:\Users\Eduardo Melo\Documents\Visual Studio 2017\Projects\WindowsFormsAppControleDeVendas\WindowsFormsAppControleDeVendas\obj\Debug\WindowsFormsAppControleDeVendas.FormLancamentoDeHistorico.resources

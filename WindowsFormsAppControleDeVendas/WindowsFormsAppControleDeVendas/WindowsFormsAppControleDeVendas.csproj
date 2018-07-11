@@ -46,6 +46,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class2.cs" />
+    <Compile Include="ClassFuncoesUtilitarias.cs" />
+    <Compile Include="ClassDados.cs" />
+    <Compile Include="FormLancamentoDeHistoricos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLancamentoDeHistoricos.Designer.cs">
+      <DependentUpon>FormLancamentoDeHistoricos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastrodeDepartamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastrodeDepartamentos.Designer.cs">
+      <DependentUpon>FormCadastrodeDepartamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastrodeProdutoseServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastrodeProdutoseServicos.Designer.cs">
+      <DependentUpon>FormCadastrodeProdutoseServicos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormCadastrodePessoas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,13 +85,34 @@
     <Compile Include="FormPrincipal.Designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSplash.Designer.cs">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLancamentoDeHistoricos.resx">
+      <DependentUpon>FormLancamentoDeHistoricos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastrodeDepartamentos.resx">
+      <DependentUpon>FormCadastrodeDepartamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastrodeProdutoseServicos.resx">
+      <DependentUpon>FormCadastrodeProdutoseServicos.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormCadastrodePessoas.resx">
       <DependentUpon>FormCadastrodePessoas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSplash.resx">
+      <DependentUpon>FormSplash.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

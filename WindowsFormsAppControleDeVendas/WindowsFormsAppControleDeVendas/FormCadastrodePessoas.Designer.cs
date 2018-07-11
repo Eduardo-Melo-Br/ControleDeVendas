@@ -99,18 +99,18 @@
             this.checkBoxFornecedor = new System.Windows.Forms.CheckBox();
             this.checkBoxCliente = new System.Windows.Forms.CheckBox();
             this.groupBoxBotoes = new System.Windows.Forms.GroupBox();
+            this.buttonNovo = new System.Windows.Forms.Button();
+            this.radioButtonNomeRazaoSocialApelido = new System.Windows.Forms.RadioButton();
+            this.comboBoxPessoas = new System.Windows.Forms.ComboBox();
             this.radioButtonIdentificadoresEspeciais = new System.Windows.Forms.RadioButton();
             this.radioButtonCPF = new System.Windows.Forms.RadioButton();
             this.radioButtonCNPJ = new System.Windows.Forms.RadioButton();
             this.buttonLocalizar = new System.Windows.Forms.Button();
             this.buttonSalvar = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
-            this.comboBoxPessoas = new System.Windows.Forms.ComboBox();
-            this.radioButtonNomeRazaoSocialApelido = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.buttonFoto = new System.Windows.Forms.Button();
-            this.buttonNovo = new System.Windows.Forms.Button();
             this.groupBox2.SuspendLayout();
             this.groupBoxIdentificacao.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -536,6 +536,7 @@
             this.textBoxRG.Name = "textBoxRG";
             this.textBoxRG.Size = new System.Drawing.Size(100, 20);
             this.textBoxRG.TabIndex = 15;
+            this.textBoxRG.TextChanged += new System.EventHandler(this.textBoxRG_TextChanged);
             // 
             // label2
             // 
@@ -848,6 +849,37 @@
             this.groupBoxBotoes.TabStop = false;
             this.groupBoxBotoes.Text = "Botões de Ação ";
             // 
+            // buttonNovo
+            // 
+            this.buttonNovo.BackColor = System.Drawing.Color.PaleGreen;
+            this.buttonNovo.Location = new System.Drawing.Point(170, 19);
+            this.buttonNovo.Name = "buttonNovo";
+            this.buttonNovo.Size = new System.Drawing.Size(75, 23);
+            this.buttonNovo.TabIndex = 7;
+            this.buttonNovo.Text = "&Novo";
+            this.buttonNovo.UseVisualStyleBackColor = false;
+            this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
+            // 
+            // radioButtonNomeRazaoSocialApelido
+            // 
+            this.radioButtonNomeRazaoSocialApelido.AutoSize = true;
+            this.radioButtonNomeRazaoSocialApelido.Location = new System.Drawing.Point(314, 20);
+            this.radioButtonNomeRazaoSocialApelido.Name = "radioButtonNomeRazaoSocialApelido";
+            this.radioButtonNomeRazaoSocialApelido.Size = new System.Drawing.Size(161, 17);
+            this.radioButtonNomeRazaoSocialApelido.TabIndex = 4;
+            this.radioButtonNomeRazaoSocialApelido.Text = "Nome/Razão Social/Apelido";
+            this.radioButtonNomeRazaoSocialApelido.UseVisualStyleBackColor = true;
+            this.radioButtonNomeRazaoSocialApelido.CheckedChanged += new System.EventHandler(this.radioButtonNomeRazaoSocialApelido_CheckedChanged);
+            // 
+            // comboBoxPessoas
+            // 
+            this.comboBoxPessoas.FormattingEnabled = true;
+            this.comboBoxPessoas.Location = new System.Drawing.Point(483, 18);
+            this.comboBoxPessoas.Name = "comboBoxPessoas";
+            this.comboBoxPessoas.Size = new System.Drawing.Size(358, 21);
+            this.comboBoxPessoas.TabIndex = 6;
+            this.comboBoxPessoas.SelectedIndexChanged += new System.EventHandler(this.comboBoxPessoas_SelectedIndexChanged);
+            // 
             // radioButtonIdentificadoresEspeciais
             // 
             this.radioButtonIdentificadoresEspeciais.AutoSize = true;
@@ -913,26 +945,6 @@
             this.label25.TabIndex = 35;
             this.label25.Text = "País:";
             // 
-            // comboBoxPessoas
-            // 
-            this.comboBoxPessoas.FormattingEnabled = true;
-            this.comboBoxPessoas.Location = new System.Drawing.Point(483, 18);
-            this.comboBoxPessoas.Name = "comboBoxPessoas";
-            this.comboBoxPessoas.Size = new System.Drawing.Size(358, 21);
-            this.comboBoxPessoas.TabIndex = 6;
-            this.comboBoxPessoas.SelectedIndexChanged += new System.EventHandler(this.comboBoxPessoas_SelectedIndexChanged);
-            // 
-            // radioButtonNomeRazaoSocialApelido
-            // 
-            this.radioButtonNomeRazaoSocialApelido.AutoSize = true;
-            this.radioButtonNomeRazaoSocialApelido.Location = new System.Drawing.Point(314, 20);
-            this.radioButtonNomeRazaoSocialApelido.Name = "radioButtonNomeRazaoSocialApelido";
-            this.radioButtonNomeRazaoSocialApelido.Size = new System.Drawing.Size(161, 17);
-            this.radioButtonNomeRazaoSocialApelido.TabIndex = 4;
-            this.radioButtonNomeRazaoSocialApelido.Text = "Nome/Razão Social/Apelido";
-            this.radioButtonNomeRazaoSocialApelido.UseVisualStyleBackColor = true;
-            this.radioButtonNomeRazaoSocialApelido.CheckedChanged += new System.EventHandler(this.radioButtonNomeRazaoSocialApelido_CheckedChanged);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(895, 20);
@@ -954,17 +966,6 @@
             this.buttonFoto.Text = "Procurar Foto";
             this.buttonFoto.UseVisualStyleBackColor = true;
             this.buttonFoto.Click += new System.EventHandler(this.buttonFoto_Click);
-            // 
-            // buttonNovo
-            // 
-            this.buttonNovo.BackColor = System.Drawing.Color.PaleGreen;
-            this.buttonNovo.Location = new System.Drawing.Point(170, 19);
-            this.buttonNovo.Name = "buttonNovo";
-            this.buttonNovo.Size = new System.Drawing.Size(75, 23);
-            this.buttonNovo.TabIndex = 7;
-            this.buttonNovo.Text = "&Novo";
-            this.buttonNovo.UseVisualStyleBackColor = false;
-            this.buttonNovo.Click += new System.EventHandler(this.buttonNovo_Click);
             // 
             // FormCadastrodePessoas
             // 

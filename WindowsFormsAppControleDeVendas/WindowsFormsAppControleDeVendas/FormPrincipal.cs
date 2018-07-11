@@ -14,6 +14,10 @@ namespace WindowsFormsAppControleDeVendas
     {
         public FormPrincipal()
         {
+            FormSplash xForm = new FormSplash();
+            xForm.Show();
+            System.Threading.Thread.Sleep(14000);
+            xForm.Close();
             InitializeComponent();
         }
 
@@ -30,7 +34,26 @@ namespace WindowsFormsAppControleDeVendas
 
         private void produtosEServiçosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            FormCadastrodeProdutoseServicos xForm = new FormCadastrodeProdutoseServicos();
+            xForm.Show();
+        }
 
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormCadastrodeDepartamentos xForm = new FormCadastrodeDepartamentos();
+            xForm.Show();
+        }
+
+        private void sobreToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox1 xForm = new AboutBox1();
+            xForm.Show();
+        }
+
+        private void vendasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormLancamentoDeHistorico xForm = new FormLancamentoDeHistorico();
+            xForm.Show();
         }
     }
 }
